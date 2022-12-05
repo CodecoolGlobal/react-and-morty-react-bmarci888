@@ -11,7 +11,7 @@ function App() {
   const [planetNumber, setPlanetNumber] = useState(0);
   const [page, setPage] = useState(1);
 
-return  (
+  return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
