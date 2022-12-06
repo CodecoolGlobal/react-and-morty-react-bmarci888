@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 export default function LocationCards({ useCharacters }) {
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(40);
+    setPage(1);
 
     const data = useCharacters(page);
 
