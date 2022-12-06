@@ -1,25 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { useCharacters, useLocations } from "./api/useData";
 import { Routes, Route } from "react-router-dom"
 import CharactersPage from "./pages/charactersPage/charactersPage";
 import LocationsPage from "./pages/locationsPage/locationsPage";
 import Home from "./pages/homePage/homePage";
+import ClickedPlanet from "./pages/locationsPage/ClickedPlanet";
+
 
 function App() {
-  //const characters = useCharacters(1);
-  //const locations = useLocations(1);
-  /*console.log("Characters data: ");
-  console.log(characters);
-  console.log("Locations data: ");*/
-  //console.log(locations);
-
+  const [planetNumber, setPlanetNumber] = useState(0);
+  const [page, setPage] = useState(1);
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<CharactersPage />} />
-        <Route path="/locations" element={<LocationsPage />} />
+        <Route path="/locations" element={<LocationsPage page={page} setPage={setPage} planetNumber={planetNumber} setPlanetNumber={setPlanetNumber} />} />
+        <Route path={`locations/${planetNumber}`} element={<ClickedPlanet planetNumber={planetNumber} page={page} />} />
       </Routes>
     </div>
   );
