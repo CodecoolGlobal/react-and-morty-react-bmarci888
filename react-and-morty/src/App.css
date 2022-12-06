@@ -1,0 +1,22 @@
+body {
+    background: url(./pages/background.jpg) no-repeat center center fixed;
+}
+.characterBtn{
+    font-size: 40px;
+    right: 200px;
+    color: #40cb9a;
+}
+.locationBtn{
+    font-size: 40px;
+    right: 200px;
+    top: 400px;
+    color: #40cb9a;
+}
+.characterContainer{
+    margin-top: 150px;
+    margin-left: 100px;
+}
+.locationContainer{
+    margin-top: 200px;
+    margin-left: 100px;
+    }
