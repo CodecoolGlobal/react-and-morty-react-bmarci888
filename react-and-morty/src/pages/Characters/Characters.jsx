@@ -14,7 +14,8 @@ const Characters = () => {
   useEffect(() => {
     if (
       data?.results &&
-      data.results[data.results.length-1].name !== characterResults[characterResults.length-1]?.name
+      data.results[data.results.length - 1].name !==
+        characterResults[characterResults.length - 1]?.name
     ) {
       setCharacterResults([...characterResults, ...data.results]);
     }
