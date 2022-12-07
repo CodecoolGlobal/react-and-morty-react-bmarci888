@@ -1,8 +1,27 @@
 .characterPage {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    justify-content: space-evenly;
     height: 100vh;
+    background-image: url(../../assets/background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  
+
+.characterCard{
+  width: 800px;
+  border: 1px solid black;
+  padding-top: 200px;
+  padding-left: 500px;
+  text-align: center;
+}
+
+.characterInfo {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+  background-color: #74b7b5;
+  height:"400px";
+  font-size: 24.4px;
+  font-family: locationFont;
+  letter-spacing: 2px;
+}
+
+

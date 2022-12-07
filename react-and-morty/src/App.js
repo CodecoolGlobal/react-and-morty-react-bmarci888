@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { useCharacters, useLocations } from "./api/useData";
 import { Routes, Route } from "react-router-dom"
 import CharacterPage from "./pages/Characters/Characters";

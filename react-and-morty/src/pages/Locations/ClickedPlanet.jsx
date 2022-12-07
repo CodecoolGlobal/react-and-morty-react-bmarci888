@@ -1,4 +1,5 @@
 import React from "react";
+import "./Locations.css";
 import planetPicture from "../../assets/wallpaperflare.com_wallpaper-2.jpeg"
 import { useLocations } from "../../api/useData";
 
