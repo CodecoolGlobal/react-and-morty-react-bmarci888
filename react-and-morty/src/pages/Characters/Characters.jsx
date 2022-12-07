@@ -38,6 +38,7 @@ const Characters = () => {
         ref={containerRef}
       >
         <h1 className="charactersTitle">Characters</h1>
+        <Link className="backHome" to="/">Back To Home</Link>
         <div className="charactersList">
           {!data?.results ? (
             <p>{data}</p>

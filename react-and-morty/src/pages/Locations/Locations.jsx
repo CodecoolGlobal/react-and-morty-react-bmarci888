@@ -1,9 +1,9 @@
 import React from "react";
-import "./Locations.css";
 import { Link } from "react-router-dom"
 import { useLocations } from "../../api/useData";
 import LocationCards from "./LocationCard";
 import ReactPaginate from "react-paginate";
+import "../Locations/Locations.css";
 
 export default function LocationsPage({ page, setPage, planetNumber, setPlanetNumber }) {
 

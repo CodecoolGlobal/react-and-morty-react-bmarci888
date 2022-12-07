@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useCharacter } from '../../api/useData';
+import { Link } from "react-router-dom";
 import './Character.css';
 
 const Character = () => {
@@ -16,9 +17,10 @@ const Character = () => {
 
   return (
     <div className="characterPage">
+        <Link className="backFromDetails" to="/characters">Back To Characters</Link>
       <div className="characterCard">
         <div className='characterInfo'>
-          <img src={image} alt={name} height="400px"/>
+          <img src={image} alt={name} height="350px"/>
         </div>
         <div className='characterInfo'>
           <h1>{name}</h1>
