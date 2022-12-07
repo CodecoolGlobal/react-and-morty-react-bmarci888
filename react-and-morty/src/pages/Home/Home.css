@@ -1,0 +1,46 @@
+.home {
+    background: url(../../assets/background.jpg) no-repeat center center fixed;
+    height: 1000px;
+}
+
+.characterBtn{
+    font-size: 50px;
+    right: 200px;
+    color: #05dc2d;
+    font-family: RickMortyFont;
+    text-decoration: none;
+}
+.locationBtn{
+    font-size: 50px;
+    right: 200px;
+    top: 400px;
+    color: #05dc2d;
+    font-family: RickMortyFont;
+    text-decoration: none;
+}
+.characterContainer{
+    margin-top: 80px;
+    margin-left: 100px;
+}
+.locationContainer{
+    margin-top: 100px;
+    margin-left: 100px;
+    }
+.introContainer{
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 80px;
+    line-height: 1.6;
+}
+.intro{
+    color: #74b7b5;
+    font-family: RickMortyFont;  
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+
+@font-face {
+        font-family: RickMortyFont;
+        src: url(../../assets/font.ttf);
+    }

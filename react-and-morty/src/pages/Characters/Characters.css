@@ -1,0 +1,54 @@
+.charactersPage {
+    background-image: url(../../assets/background.jpg);
+  }
+  
+  .charactersTitle {
+    text-align: center;
+    color: white;
+    margin-block-start: 0;
+    padding-top: 2vw;
+  }
+  
+  .charactersContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .charactersList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .charactersCardContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: black;
+    text-decoration: unset;
+    width: 300px;
+  }
+  
+  .charactersCardContainer img {
+    height: 300px;
+    width: 300px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .charactersCardContainer div {
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    padding: 8px;
+  }
+  
+  .charactersCardContainer h3 {
+    margin-block-start: 0;
+  }
+  
+  .charactersPager {
+    color: white;
+    text-align: center;
+  }

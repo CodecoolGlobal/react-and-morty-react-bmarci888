@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useFetch } from "./useFetch.js";
-import { mainUrls } from "./dataRoutes.js";
+import React, { useEffect } from 'react';
+import { useFetch } from './useFetch.js';
+import { mainUrls } from './dataRoutes.js';
 
 /**
      Fetch data from an open-source API. It returns json containing pagination.
@@ -14,7 +14,15 @@ export const useCharacters = (pageNum = 1) => {
   useEffect(() => {
     setUrl(mainUrls.characters + pageNum);
   }, [pageNum]);
-  return characters === undefined ? "Loading..." : characters;
+  return characters === undefined ? 'Loading...' : characters;
+};
+
+export const useCharacter = (id = 1) => {
+  const [character, setUrl] = useFetch(mainUrls.character + id);
+  useEffect(() => {
+    setUrl(mainUrls.character + id);
+  }, [id]);
+  return character === undefined ? 'Loading...' : character;
 };
 
 /**
@@ -29,5 +37,5 @@ export const useLocations = (pageNum = 1) => {
   useEffect(() => {
     setUrl(mainUrls.locations + pageNum);
   }, [pageNum]);
-  return locations === undefined ? "Loading..." : locations;
+  return locations === undefined ? 'Loading...' : locations;
 };
