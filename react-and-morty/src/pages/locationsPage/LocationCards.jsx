@@ -2,7 +2,7 @@ import React from "react";
 import planetPicture from "../../assets/wallpaperflare.com_wallpaper-2.jpeg";
 import { Link } from "react-router-dom";
 
-export default function LocationCards({ useLocations, page, setPlanetNumber, planetNumber }) {
+export default function LocationCards({ useLocations, page, setPlanetNumber }) {
 
     const data = useLocations(page);
 

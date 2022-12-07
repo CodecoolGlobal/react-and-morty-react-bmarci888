@@ -15,8 +15,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<CharactersPage />} />
-        <Route path="/locations" element={<LocationsPage page={page} setPage={setPage} planetNumber={planetNumber} setPlanetNumber={setPlanetNumber} />} />
-        <Route path={`locations/${planetNumber}`} element={<ClickedPlanet planetNumber={planetNumber} page={page} />} />
+        <Route path="/locations" element={<LocationsPage
+          page={page}
+          setPage={setPage}
+          planetNumber={planetNumber}
+          setPlanetNumber={setPlanetNumber} />} />
+        <Route path={`locations/${planetNumber}`} element={<ClickedPlanet
+          planetNumber={planetNumber}
+          page={page} />} />
       </Routes>
     </div>
   );

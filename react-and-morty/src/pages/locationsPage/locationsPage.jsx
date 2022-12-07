@@ -4,12 +4,15 @@ import { useLocations } from "../../api/useData";
 import LocationCards from "./LocationCards";
 import ReactPaginate from "react-paginate";
 import "../locationsPage/locations.css";
+import { useState } from "react";
 
-export default function LocationsPage({ page, setPage, planetNumber, setPlanetNumber }) {
+export default function LocationsPage({ page, setPage, setPlanetNumber }) {
+    const [isDelayed, setIsDelayed] = useState(false);
 
     const handleClick = (data) => {
         setPage(data.selected + 1);
     }
+    setTimeout(() => setIsDelayed(true), 100);
 
     return (
         <div className="locationPage">
@@ -18,9 +21,12 @@ export default function LocationsPage({ page, setPage, planetNumber, setPlanetNu
                 <Link className="backHome" to="/">Back To Home</Link>
             </div>
             <div className="planetCardsContainer">
-                <LocationCards useLocations={useLocations} page={page} setPage={setPage} planetNumber={planetNumber} setPlanetNumber={setPlanetNumber} />
+                <LocationCards
+                    useLocations={useLocations}
+                    page={page}
+                    setPlanetNumber={setPlanetNumber} />
             </div>
-            <ReactPaginate
+            {isDelayed ? <ReactPaginate
                 previousLabel={"<<"}
                 nextLabel={">>"}
                 breakLabel={"..."}
@@ -37,7 +43,8 @@ export default function LocationsPage({ page, setPage, planetNumber, setPlanetNu
                 breakClassName={"page-item"}
                 breakLinkClassName={"page-link"}
                 activeClassName={"active"}
-            />
+                forcePage={page - 1}
+            /> : <></>}
         </div>
     );
 }
