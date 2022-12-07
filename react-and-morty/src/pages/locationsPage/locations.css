@@ -1,0 +1,111 @@
+body {
+    background-color: #160433;
+}
+
+@font-face {
+    font-family: locationFont;
+    src: url("../../assets/HanaleiFill-Regular.ttf");
+}
+
+.title {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-family: locationFont;
+}
+
+.backHome {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: locationFont;
+}
+
+.planetCard {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin: 20px;
+    text-decoration: unset;
+}
+
+.planetCardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2vw;
+    text-decoration: unset;
+}
+
+.planetCard h5 {
+    margin-block-start: 0;
+    font-family: locationFont;
+    width: 221px;
+}
+
+.planetCard h4 {
+    margin-block-start: 0;
+    font-family: locationFont;
+    width: 221px;
+}
+
+
+.planetCard img {
+    border-radius: 8px 8px 0 0;
+}
+
+.planetCard div {
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    padding: 8px;
+    height: 140px;
+}
+
+.pagination {
+    margin-bottom: 40px;
+    justify-content: center;
+    font-family: locationFont;
+}
+
+
+.planetDetails {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin: 20px;
+    text-decoration: unset;
+}
+
+.planetDetails h5 {
+    margin-block-start: 0;
+    font-family: locationFont;
+    width: 330px;
+}
+
+.planetDetails h4 {
+    margin-block-start: 0;
+    font-family: locationFont;
+    width: 330px;
+}
+
+
+.planetDetails img {
+    border-radius: 8px 8px 0 0;
+    width: 330px;
+}
+
+.planetDetails div {
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    padding: 8px;
+    height: 220px;
+    width: 330px;
+}
+
+.backFromDetails {
+    font-family: locationFont;
+    text-decoration: unset;
+    color: black;
+}

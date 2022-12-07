@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { useLocations } from "../../api/useData";
 import LocationCards from "./LocationCards";
 import ReactPaginate from "react-paginate";
+import "../locationsPage/locations.css";
 
 export default function LocationsPage({ page, setPage, planetNumber, setPlanetNumber }) {
 
