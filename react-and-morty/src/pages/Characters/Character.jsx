@@ -18,7 +18,7 @@ const Character = () => {
     <div className="characterPage">
       <div className="characterCard">
         <div className='characterInfo'>
-          <img src={image} alt={name} />
+          <img src={image} alt={name} height="400px"/>
         </div>
         <div className='characterInfo'>
           <h1>{name}</h1>
