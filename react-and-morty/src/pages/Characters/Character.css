@@ -1,12 +1,12 @@
 .characterPage {
-    height: 100vh;
-    background-image: url(../../assets/background2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-  }
+  height: 100vh;
+  background-image: url(../../assets/background2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
 
-.characterCard{
+.characterCard {
   display: inline-block;
   width: 1500px;
   border: 1px solid black;
@@ -19,18 +19,17 @@
   padding: 1rem 1rem;
   vertical-align: middle;
   background-color: #74b7b5;
-  height:400px;
+  height: 400px;
   max-width: fit-content;
   font-size: 24.4px;
   font-family: locationFont;
   letter-spacing: 2px;
 }
-.backFromDetails{
+
+.backFromDetails {
   display: flex;
   justify-content: center;
   color: #05dc2d;
   font-size: 30px;
   letter-spacing: 2px;
-  }
-
-
+}

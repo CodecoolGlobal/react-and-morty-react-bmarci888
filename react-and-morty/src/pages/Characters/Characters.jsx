@@ -14,7 +14,8 @@ const Characters = () => {
   useEffect(() => {
     if (
       data?.results &&
-      data.results[data.results.length-1].name !== characterResults[characterResults.length-1]?.name
+      data.results[data.results.length - 1].name !==
+        characterResults[characterResults.length - 1]?.name
     ) {
       setCharacterResults([...characterResults, ...data.results]);
     }
@@ -25,7 +26,6 @@ const Characters = () => {
       const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
       if (scrollTop + clientHeight === scrollHeight) {
         setCurrentPage(currentPage + 1);
-        console.log(currentPage);
       }
     }
   };
@@ -38,7 +38,9 @@ const Characters = () => {
         ref={containerRef}
       >
         <h1 className="charactersTitle">Characters</h1>
-        <Link className="backHome" to="/">Back To Home</Link>
+        <Link className="backHome" to="/">
+          Back To Home
+        </Link>
         <div className="charactersList">
           {!data?.results ? (
             <p>{data}</p>
