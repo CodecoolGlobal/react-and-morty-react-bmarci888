@@ -7,7 +7,6 @@ import './Character.css';
 const Character = () => {
   const { id } = useParams();
   const characterData = useCharacter(id);
-  console.log(characterData);
   if (!characterData?.name) {
     return characterData;
   }
