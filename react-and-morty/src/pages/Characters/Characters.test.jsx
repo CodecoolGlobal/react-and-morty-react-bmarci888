@@ -1,5 +1,5 @@
 /* eslint-disable jest/no-mocks-import */
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import { useCharacters } from '../../api/useData';
@@ -40,7 +40,7 @@ describe('<Characters />', () => {
         <Characters />
       </BrowserRouter>
     );
-    const imageAlt = await screen.findByAltText(/Rick/);
+    const imageAlt = await screen.findByAltText(mockResponse.results[0].name);
     expect(imageAlt).toBeInTheDocument();
   });
 
@@ -51,7 +51,7 @@ describe('<Characters />', () => {
         <Characters />
       </BrowserRouter>
     );
-    const imageAlt = await screen.findByAltText(/Rick/);
+    const imageAlt = await screen.findByAltText(mockResponse.results[0].name);
     userEvent.click(imageAlt);
     expect(window.location.pathname).toMatch(/characters\/1/);
   });
