@@ -1,55 +1,62 @@
-import { render, fireEvent, screen } from '@testing-library/react'
-import LocationsPage from "./locationsPage"
-import userEvent from '@testing-library/user-event'
-import { BrowserRouter } from 'react-router-dom'
+/* eslint-disable jest/no-mocks-import */
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
+import { useLocations } from '../../api/useData';
+import LocationsPage from './locationsPage';
+import { mockResponse } from './__mocks__/mockLocationsResponse';
 
+jest.mock('../../api/useData', () => ({
+    useLocations: jest.fn(),
+}));
 
-test('Back to home button is on the page', async () => {
-    render(
-        <BrowserRouter initialEntries={'/locations'}>
-            <LocationsPage />
-        </BrowserRouter>
-    )
+describe('<LocationsPage />', () => {
+    test('should render Locations Page title', () => {
+        useLocations.mockImplementation(() => 'Loading...');
+        render(
+            <BrowserRouter>
+                <LocationsPage />
+            </BrowserRouter>
+        );
+        const title = screen.getByText('Locations');
+        expect(title.textContent).toBe('Locations');
+    });
 
-    const backHomeButton = await screen.findAllByText(/Back To Home/)
-    expect(backHomeButton).toHaveLength(1)
+    test('should render loading', () => {
+        useLocations.mockImplementation(() => 'Loading...');
+        render(
+            <BrowserRouter>
+                <LocationsPage />
+            </BrowserRouter>
+        );
+        const text = screen.getByText(/Loading/);
+        expect(text).toBeInTheDocument();
+    });
 
-})
+    test('should render cards', async () => {
+        useLocations.mockImplementation(() => mockResponse);
+        render(
+            <BrowserRouter>
+                <LocationsPage />
+            </BrowserRouter>
+        );
+        const name = await screen.findByText(/Earth/);
+        expect(name).toBeInTheDocument();
+    });
 
-test('The title is on the page', async () => {
-    render(
-        <BrowserRouter initialEntries={'/locations'}>
-            <LocationsPage />
-        </BrowserRouter>
-    )
+    test('should navigate to Location details page', async () => {
+        useLocations.mockImplementation(() => mockResponse);
+        render(
+            <BrowserRouter>
+                <LocationsPage page={1}
+                    setPage={jest.fn(() => 2)}
+                    planetNumber={1}
+                    setPlanetNumber={jest.fn()} />
+            </BrowserRouter>
+        );
+        const name = await screen.findByText(/Earth/);
+        userEvent.click(name);
+        expect(window.location.pathname).toMatch(/locations\/1/);
+    });
+});
 
-    const title = await screen.findAllByText(/Locations/)
-    expect(title).toHaveLength(1)
-
-})
-
-test('Cards are displayed', async () => {
-    render(
-        <BrowserRouter initialEntries={'/locations'}>
-            <LocationsPage />
-        </BrowserRouter>
-    )
-
-    const cards = await screen.findAllByText(/Type: /)
-    expect(cards).toHaveLength(20);
-
-})
-
-/*test('details displayed', async () => {
-    render(
-        <BrowserRouter initialEntries={'/locations'}>
-            <LocationsPage />
-        </BrowserRouter>
-    )
-
-    const cards = await screen.findAllByText(/Type: /)
-    cards.map(item => userEvent.click(item))
-    const details = cards.getElementByClassName("planetDetails");
-    expect(details).toBeInTheDocument()
-
-})*/
