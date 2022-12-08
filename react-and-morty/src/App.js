@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom"
 import CharactersPage from "./pages/charactersPage/charactersPage";
-import LocationsPage from "./pages/locationsPage/locationsPage";
+import LocationsPage from "./pages/Locations/Locations";
 import Home from "./pages/homePage/homePage";
-import ClickedPlanet from "./pages/locationsPage/ClickedPlanet";
+import ClickedPlanet from "./pages/Locations/ClickedPlanet";
 
 
 function App() {
