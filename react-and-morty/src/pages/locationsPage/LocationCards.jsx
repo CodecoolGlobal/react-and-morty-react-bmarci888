@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function LocationCards({ useLocations, page, setPlanetNumber }) {
 
     const data = useLocations(page);
+    console.log(data)
 
 
     function cards(locations) {
